@@ -81,7 +81,7 @@ router.post("/login", async function (req, res, next) {
 
     res.json({
       success: true,
-      userToken: token,
+      token: token,
       email: retrieveUser.email,
     });
     return;
@@ -118,7 +118,8 @@ router.get('/message', async function (req, res, next){
 
   return res.json({
     success: true,
-    message: verified,
+    verified: verified,
+    message: "You are verified",
     user: userScope
   })
   } catch (error) {
